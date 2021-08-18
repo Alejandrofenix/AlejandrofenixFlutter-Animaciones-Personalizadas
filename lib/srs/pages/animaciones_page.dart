@@ -27,7 +27,8 @@ class _CuadradoAnimadoState extends State<CuadradoAnimado>
     controller = new AnimationController(
         vsync: this, duration: Duration(milliseconds: 4000));
 
-    rotacion = Tween(begin: 0.0, end: 4.0 * math.pi).animate(controller);
+    rotacion = Tween(begin: 0.0, end: 4.0 * math.pi)
+        .animate(CurvedAnimation(parent: controller, curve: Curves.bounceOut));
 
     controller.addListener(() {
       print('Status: ' + controller.status.toString());
